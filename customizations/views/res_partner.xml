@@ -1,0 +1,74 @@
+<odoo>
+  <data>
+
+  <record id="res_partner_custom" model="ir.ui.view">
+    <field name="name">res.partner.form.inherit</field>
+    <field name="model">res.partner</field>
+    <field name="priority">98</field>
+    <field name="inherit_id" ref="base.view_partner_form"/>
+    <!-- <field name="groups_id" eval="[(4, ref('stock.group_stock_manager'))]"/> -->
+    <field name="arch" type="xml">
+      <xpath expr="//field[@name='vat']" position="after">
+        <field name="employees_number" string="Employees Number" help="Number of employees that work in the Company"/>
+      </xpath>
+    </field>
+  </record>
+
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="customizations.list">
+      <field name="name">customizations list</field>
+      <field name="model">customizations.customizations</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="customizations.action_window">
+      <field name="name">customizations window</field>
+      <field name="res_model">customizations.customizations</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="customizations.action_server">
+      <field name="name">customizations server</field>
+      <field name="model_id" ref="model_customizations_customizations"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="customizations" id="customizations.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="customizations.menu_1" parent="customizations.menu_root"/>
+    <menuitem name="Menu 2" id="customizations.menu_2" parent="customizations.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="customizations.menu_1_list" parent="customizations.menu_1"
+              action="customizations.action_window"/>
+    <menuitem name="Server to list" id="customizations" parent="customizations.menu_2"
+              action="customizations.action_server"/>
+-->
+  </data>
+</odoo>

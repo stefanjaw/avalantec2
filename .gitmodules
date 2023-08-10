@@ -6,3 +6,6 @@
 	path = l10n_cr_einvoice
 	url = https://github.com/stefanjaw/l10n_cr_einvoice.git
 	branch = odoov14nz
+[submodule "bccr_odoo"]
+	path = bccr_odoo
+	url = https://github.com/stefanjaw/bccr_odoo.git

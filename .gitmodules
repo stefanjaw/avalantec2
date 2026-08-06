@@ -9,3 +9,7 @@
 [submodule "bccr_odoo"]
 	path = bccr_odoo
 	url = https://github.com/stefanjaw/bccr_odoo.git
+[submodule "mh_exchange_rate"]
+	path = mh_exchange_rate
+	url = git@github.com:stefanjaw/mh_exchange_rate.git
+	branch = odoov17
